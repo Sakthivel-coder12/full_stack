@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Receipt</title>
+</head>
+<body>
+    <h1>Booking Confirmed!</h1>
+    
+    <h3>Receipt Details:</h3>
+    <p><strong>Rental ID:</strong> #<%= booking.id %></p>
+    <p><strong>Rental Date:</strong> <%= booking.date %></p>
+    <p><strong>Car Model:</strong> <%= booking.car %></p>
+    <p><strong>Rental Days:</strong> <%= booking.days %></p>
+    <p><strong>Total Amount:</strong> ₹<%= booking.total %></p>
+    
+    <br>
+    <a href="/">Book Another Car</a> | 
+    <a href="/bookings">View All Bookings</a>
+</body>
+</html>

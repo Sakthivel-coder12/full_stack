@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Bookings</title>
+</head>
+<body>
+    <h1>All Bookings</h1>
+    
+    <a href="/">← Back to Booking</a>
+    
+    <% if (bookings.length === 0) { %>
+        <p>No bookings yet.</p>
+    <% } else { %>
+        <table border="1" style="width: 100%; margin-top: 20px;">
+            <tr>
+                <th>Rental ID</th>
+                <th>Date</th>
+                <th>Car Model</th>
+                <th>Days</th>
+                <th>Total</th>
+            </tr>
+            <% bookings.forEach(booking => { %>
+            <tr>
+                <td>#<%= booking.id %></td>
+                <td><%= booking.date %></td>
+                <td><%= booking.car %></td>
+                <td><%= booking.days %></td>
+                <td>₹<%= booking.total %></td>
+            </tr>
+            <% }); %>
+        </table>
+    <% } %>
+</body>
+</html>

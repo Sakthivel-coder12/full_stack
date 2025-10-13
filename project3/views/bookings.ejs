@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Bookings</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .delete-btn { background: red; color: white; padding: 5px 10px; text-decoration: none; border-radius: 3px; }
+        .delete-all-btn { background: darkred; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>All Bookings</h1>
+    
+    <a href="/">← Back to Booking</a>
+    
+    <% if (tickets.length === 0) { %>
+        <p>No bookings yet.</p>
+    <% } else { %>
+        <table>
+            <tr>
+                <th>Ticket No</th>
+                <th>Event Name</th>
+                <th>Date</th>
+                <th>Tickets</th>
+                <th>Total Amount</th>
+                <th>Action</th>
+            </tr>
+            <% tickets.forEach(ticket => { %>
+            <tr>
+                <td>#<%= ticket.ticketNo %></td>
+                <td><%= ticket.eventName %></td>
+                <td><%= ticket.date %></td>
+                <td><%= ticket.numTickets %></td>
+                <td>₹<%= ticket.total %></td>
+                <td>
+                    <a href="/delete/<%= ticket.ticketNo %>" class="delete-btn" 
+                       onclick="return confirm('Delete ticket #<%= ticket.ticketNo %>?')">
+                       Delete
+                    </a>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+        
+        <br>
+        <a href="/delete-all" class="delete-all-btn" 
+           onclick="return confirm('Delete ALL bookings? This cannot be undone!')">
+           Delete All Bookings
+        </a>
+    <% } %>
+</body>
+</html>

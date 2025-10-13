@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Booking</title>
+</head>
+<body>
+    <h1>Book Tickets</h1>
+    
+    <form action="/book" method="POST">
+        <p>
+            <label>Event Name:</label><br>
+            <select name="eventName" required>
+                <option value="">Select Event</option>
+                <% events.forEach(event => { %>
+                    <option value="<%= event %>"><%= event %></option>
+                <% }); %>
+            </select>
+        </p>
+        
+        <p>
+            <label>Date:</label><br>
+            <input type="date" name="date" required>
+        </p>
+        
+        <p>
+            <label>Number of Tickets:</label><br>
+            <input type="number" name="numTickets" min="1" required>
+        </p>
+        
+        <button type="submit">Book Tickets</button>
+    </form>
+    
+    <p><a href="/bookings">View All Bookings</a></p>
+    
+    <h3>Ticket Prices:</h3>
+    <ul>
+        <li>Concert: ₹1200</li>
+        <li>Workshop: ₹800</li>
+        <li>Seminar: ₹500</li>
+        <li>Play: ₹700</li>
+    </ul>
+</body>
+</html>

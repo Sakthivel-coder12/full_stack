@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Rental</title>
+</head>
+<body>
+    <h1>Car Rental Booking</h1>
+    
+    <form action="/book" method="GET">
+        <p>
+            <label>Rental Date:</label><br>
+            <input type="date" name="rentalDate" required>
+        </p>
+        
+        <p>
+            <label>Car Model:</label><br>
+            <select name="carModel" required>
+                <option value="">Select Car</option>
+                <% carModels.forEach(model => { %>
+                    <option value="<%= model %>"><%= model %></option>
+                <% }); %>
+            </select>
+        </p>
+        
+        <p>
+            <label>Rental Days:</label><br>
+            <input type="number" name="rentalDays" min="1" required>
+        </p>
+        
+        <button type="submit">Book Car</button>
+    </form>
+    
+    <p><a href="/bookings">View All Bookings</a></p>
+    
+    <h3>Rental Rates:</h3>
+    <ul>
+        <li>Toyota Corolla: ₹2500/day</li>
+        <li>Honda City: ₹3000/day</li>
+        <li>Mahindra Scorpio: ₹4000/day</li>
+        <li>Hyundai Creta: ₹3500/day</li>
+    </ul>
+</body>
+</html>

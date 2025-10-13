@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Receipt</title>
+</head>
+<body>
+    <h1>Booking Confirmed!</h1>
+    
+    <h3>Ticket Receipt:</h3>
+    <p><strong>Ticket No:</strong> #<%= ticket.ticketNo %></p>
+    <p><strong>Event Name:</strong> <%= ticket.eventName %></p>
+    <p><strong>Date:</strong> <%= ticket.date %></p>
+    <p><strong>Number of Tickets:</strong> <%= ticket.numTickets %></p>
+    <p><strong>Total Amount:</strong> ₹<%= ticket.total %></p>
+    
+    <br>
+    <a href="/">Book More Tickets</a>
+</body>
+</html>
