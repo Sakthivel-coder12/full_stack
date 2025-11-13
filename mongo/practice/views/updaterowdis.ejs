@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All paitent_id</h1>
+    <table style="border: 1px solid black; border-collapse: collapse;" cellpadding="6" border="1">
+        <th>paitent id</th>
+        <th>paitent Name</th>
+        <th>Phone Number</th>
+        <th>Gender</th>
+        <th>Blood group</th>
+        <% patients.forEach(patient =>{ %>
+            <tr>
+                <td><%= patient.pid%></td>
+                <td><%= patient.pname%></td>
+                <td><%= patient.phone%></td>
+                <td><%= patient.gender%></td>
+                <td><%= patient.bgroup%></td>
+                <td><a href="/updateform/<%= patient.pid%>">Update</a></td>
+            </tr>
+        <% }) %>
+    </table>
+
+
+</body>
+</html>

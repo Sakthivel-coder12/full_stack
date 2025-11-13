@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The compare table</h1>
+    <table style="border: black; border-collapse: collapse;">
+        <tr>
+            <th>student1</th>
+            <th>student1</th>
+        </tr>
+        <% students.forEach(student => { %>
+            <tr>
+                <td><%= student.fname %></td>
+                <td><%= student.lname %></td>
+                <td><%= student.gender %></td>
+                <td><%= student.phone %></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

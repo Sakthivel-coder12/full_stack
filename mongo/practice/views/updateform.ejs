@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/updateform" method = "post">
+        Enter pid you want to update:
+        <input type="text" name ="pid">
+        Select which field you want to update:
+        <select name="upfield" id="">
+            <option value="pname">pname</option>
+            <option value="phone">phone</option>
+            <option value="gender">gender</option>
+            <option value="bgroup">bgroup</option>
+        </select>
+        Enter the values to update:
+        <input type="text" name = "upvalue"><br><br>
+        <button type="submit">update</button>
+    </form>
+    <script>
+        const pid = window.location.pathname.split('/').pop();
+        if(pid)
+        {
+            document.getElementsByName("pid")[0].value = pid;
+        }
+    </script>
+</body>
+</html>

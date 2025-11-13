@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:5000/signup" method = "post">
+        Enter the patient id :
+        <input type="text" name = "pid"> <br><br>
+        enter the name : 
+        <input type="text" name = "pname"> <br><br>
+        enter the phone number : 
+        <input type="number" name = "phone"> <br><br>
+        Gender : 
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        Blood Group:
+        <select name="bgroup" id="">
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="B+">B+</option>
+        </select>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
